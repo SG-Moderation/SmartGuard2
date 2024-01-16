@@ -1,6 +1,9 @@
 # SmartGuard
 A HexChat addon that aids moderation by reading messages received real-time in channels and narrowing them down into suspicious messages that may contain potential swears. With this tool you don't have to read every single message in the chat you're moderating; this addon narrows everything down to a _way_ smaller collection.
 
+### Credits
+Credit goes to @src4026 for writing the whitelist code and contributing to the blacklist and README.
+
 ## Ability
 Most cases of swear filter bypass are caught.
 - Blending with other words: `hellofvck3you`
