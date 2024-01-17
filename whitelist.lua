@@ -4,6 +4,10 @@ whitelist = {}
 
 whitelist.whitelist1 = {
     "cook",
+    "doughnut",
+    "ashton",
+    "medic",
+    "walnut",
 }
 
 return whitelist
