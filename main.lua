@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------------------------------
 
 -- PLEASE SET THE DIRECTORY OF THIS SCRIPT
-local script_dir = "C:\\Users\\Ryan\\AppData\\Roaming\\HexChat\\addons\\SmartGuard"
+local script_dir = ""
 local log_channel = "##smartguard"
 
 ------------------------------------------------------------------------------------------------------------------------
