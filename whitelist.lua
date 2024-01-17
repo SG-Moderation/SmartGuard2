@@ -2,20 +2,6 @@
 
 whitelist = {}
 
-whitelist.whitelist1 = {
-    "cook",
-    "cookie",
-    "doughnut",
-    "ashton",
-    "medic",
-    "walnut",
-    "glass",
-    "wolf%_lazzer",
-    "grass",
-    "class",
-    "kokomastr",
-    "butterflys",
-    "butter",
-}
+whitelist.whitelist1 = {}
 
 return whitelist

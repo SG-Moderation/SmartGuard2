@@ -54,8 +54,8 @@ hexchat.hook_print("Channel Message", function(word, _)
 
     if is_in(hexchat.get_info("channel"), mod_channel) then
 
-        local message_org = word[2]
-        local message_auth, message_cont = message_org:match("([^%s]+)%s*(.*)")
+        local message_cont = word[2]
+        local message_auth = word[1]
 
         if smartguard.moderate(message_cont, message_auth,
                 blacklist.blacklist1,
