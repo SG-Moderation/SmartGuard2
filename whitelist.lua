@@ -8,6 +8,10 @@ whitelist.whitelist1 = {
     "ashton",
     "medic",
     "walnut",
+    "glass",
+    "wolf%_lazzer",
+    "grass",
+    "class",
 }
 
 return whitelist
