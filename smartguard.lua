@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------------------------------
 
 --define
-SmartGuard = {}
+smartguard = {}
 
 local last_messages_a1 = {}
 local last_messages_a2 = {}
@@ -57,7 +57,7 @@ end
 
 --removes all special characters, spaces so it is just pure plain text
 --first if tests with duplicates, second if without
-function SmartGuard.check_a1(message, name, blacklist)
+function smartguard.check_a1(message, name, blacklist)
 
     if not last_messages_a1[name] then
         last_messages_a1[name] = {}
@@ -84,7 +84,7 @@ end
 
 --removes all spaces but keep special characters
 --first if tests with duplicates, second if without
-function SmartGuard.check_a2(message, name, blacklist)
+function smartguard.check_a2(message, name, blacklist)
 
     if not last_messages_a2[name] then
         last_messages_a2[name] = {}
@@ -112,7 +112,7 @@ end
 --removes all special characters but keep spaces
 --a space is added at the end of each message in the table
 --first if tests with duplicates, second if without
-function SmartGuard.check_b1(message, name, blacklist)
+function smartguard.check_b1(message, name, blacklist)
 
     if not last_messages_b1[name] then
         last_messages_b1[name] = {}
@@ -140,7 +140,7 @@ end
 --replace all special characters with spaces
 --a space is added at the end of each message in the table
 --first if tests with duplicates, second if without
-function SmartGuard.check_b2(message, name, blacklist)
+function smartguard.check_b2(message, name, blacklist)
 
     if not last_messages_b2[name] then
         last_messages_b2[name] = {}
@@ -167,7 +167,7 @@ end
 
 --keep special characters and spaces but remove duplicates
 --a space is added at the end of each message in the table
-function SmartGuard.check_b3(message, name, blacklist)
+function smartguard.check_b3(message, name, blacklist)
 
     if not last_messages_b3[name] then
         last_messages_b3[name] = {}
@@ -193,22 +193,22 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 
 
-function SmartGuard.whitelist(message, name, whitelist, blacklist1, blacklist2)
+function smartguard.whitelist(message, name, whitelist, blacklist1, blacklist2)
 
     message = string.lower(message)
 
     for _, word in ipairs(whitelist) do
         if string.find(message, word) then
             message = string.gsub(message, word, "")
-            if SmartGuard.check_a1(message, name, blacklist1) then
+            if smartguard.check_a1(message, name, blacklist1) then
                 return false
-            elseif SmartGuard.check_a2(message, name, blacklist1) then
+            elseif smartguard.check_a2(message, name, blacklist1) then
                 return false
-            elseif SmartGuard.check_b1(message, name, blacklist2) then
+            elseif smartguard.check_b1(message, name, blacklist2) then
                 return false
-            elseif SmartGuard.check_b2(message, name, blacklist2) then
+            elseif smartguard.check_b2(message, name, blacklist2) then
                 return false
-            elseif SmartGuard.check_b3(message, name, blacklist2) then
+            elseif smartguard.check_b3(message, name, blacklist2) then
                 return false
             else
                 return true
@@ -220,6 +220,6 @@ end
 
 ------------------------------------------------------------------------------------------------------------------------
 
-return SmartGuard
+return smartguard
 
 ------------------------------------------------------------------------------------------------------------------------

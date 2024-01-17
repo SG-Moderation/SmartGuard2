@@ -1,5 +1,9 @@
 -- Check the README.md for information on how to use these tables.
 
-whitelist1 = {
+whitelist = {}
+
+whitelist.whitelist1 = {
     "cook",
 }
+
+return whitelist

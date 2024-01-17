@@ -1,6 +1,8 @@
 -- Check the README.md for information on how to use these tables.
 
-blacklist2 = {
+blacklist = {}
+
+blacklist.blacklist2 = {
     "fu ",
     "f u ",
     "shi ",
@@ -17,7 +19,7 @@ blacklist2 = {
     "s x ",
 }
 
-blacklist1 = {
+blacklist.blacklist1 = {
     -- Hindi swears
     'chutiya',
     'chutiye',
@@ -550,3 +552,5 @@ blacklist1 = {
     '卐',
     '卍',
 }
+
+return blacklist
