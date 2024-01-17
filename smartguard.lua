@@ -193,28 +193,30 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 
 
-function smartguard.whitelist(message, name, whitelist, blacklist1, blacklist2)
+function smartguard.moderate(content, author, blacklist1, blacklist2, whitelist1)
 
-    message = string.lower(message)
+    content = string.lower(content)
 
-    for _, word in ipairs(whitelist) do
-        if string.find(message, word) then
-            message = string.gsub(message, word, "")
-            if smartguard.check_a1(message, name, blacklist1) then
-                return false
-            elseif smartguard.check_a2(message, name, blacklist1) then
-                return false
-            elseif smartguard.check_b1(message, name, blacklist2) then
-                return false
-            elseif smartguard.check_b2(message, name, blacklist2) then
-                return false
-            elseif smartguard.check_b3(message, name, blacklist2) then
-                return false
-            else
-                return true
+    if whitelist1 then
+        for _, word in ipairs(whitelist1) do
+            if string.find(content, word) then
+                content = string.gsub(content, word, "")
             end
         end
     end
+
+    if
+        smartguard.check_a1(content, author, blacklist1) or
+        smartguard.check_a2(content, author, blacklist1) or
+        smartguard.check_b1(content, author, blacklist2) or
+        smartguard.check_b2(content, author, blacklist2) or
+        smartguard.check_b3(content, author, blacklist2)
+    then
+        return true
+    else
+        return false
+    end
+
 end
 
 

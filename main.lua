@@ -42,24 +42,10 @@ hexchat.hook_print("Channel Message", function(word, _)
     local message_org = word[2]
     local message_auth, message_cont = message_org:match("([^%s]+)%s*(.*)")
 
-    if smartguard.check_a1(message_cont, message_auth, blacklist.blacklist1)
-        and not smartguard.whitelist(message_cont, message_auth, whitelist.whitelist1, blacklist.blacklist1, blacklist.blacklist2)
-    then
-        log_message(message_auth, message_cont)
-    elseif smartguard.check_a2(message_cont, message_auth, blacklist.blacklist1)
-        and not smartguard.whitelist(message_cont, message_auth, whitelist.whitelist1, blacklist.blacklist1, blacklist.blacklist2)
-    then
-        log_message(message_auth, message_cont)
-    elseif smartguard.check_b1(message_cont, message_auth, blacklist.blacklist2)
-        and not smartguard.whitelist(message_cont, message_auth, whitelist.whitelist1, blacklist.blacklist1, blacklist.blacklist2)
-    then
-        log_message(message_auth, message_cont)
-    elseif smartguard.check_b2(message_cont, message_auth, blacklist.blacklist2)
-        and not smartguard.whitelist(message_cont, message_auth, whitelist.whitelist1, blacklist.blacklist1, blacklist.blacklist2)
-    then
-        log_message(message_auth, message_cont)
-    elseif smartguard.check_b3(message_cont, message_auth, blacklist.blacklist2)
-        and not smartguard.whitelist(message_cont, message_auth, whitelist.whitelist1, blacklist.blacklist1, blacklist.blacklist2)
+    if smartguard.moderate(message_cont, message_auth,
+            blacklist.blacklist1,
+            blacklist.blacklist2,
+            whitelist.whitelist1)
     then
         log_message(message_auth, message_cont)
     end
