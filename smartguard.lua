@@ -199,7 +199,7 @@ function smartguard.moderate(content, author, blacklist1, blacklist2, whitelist1
 
     if whitelist1 then
         for _, word in ipairs(whitelist1) do
-            if string.find(content .. " ", word) then
+            if string.find(" " .. content .. " ", " " .. word .. " ") then
                 content = string.gsub(content, word, "")
             end
         end

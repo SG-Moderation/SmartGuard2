@@ -3,19 +3,19 @@
 whitelist = {}
 
 whitelist.whitelist1 = {
-    "cook ",
+    "cook",
     "cookie",
     "doughnut",
     "ashton",
-    "medic ",
-    "walnut ",
-    "glass ",
+    "medic",
+    "walnut",
+    "glass",
     "wolf%_lazzer",
-    "grass ",
-    "class ",
+    "grass",
+    "class",
     "kokomastr",
     "butterflys",
-    "butter ",
+    "butter",
 }
 
 return whitelist
