@@ -2,6 +2,10 @@
 
 -- PLEASE SET THE DIRECTORY OF THIS SCRIPT
 local script_dir = ""
+local mod_channel = {
+    "##minetest-ctf",
+    "##smartguard",
+}
 local log_channel = "##smartguard"
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -33,24 +37,38 @@ local function log_message(pname, pmessage)
 
 end
 
+function is_in(str, tbl)
+    for _, value in pairs(tbl) do
+        if value == str then
+            return true
+        end
+    end
+    return false
+end
+
 
 ------------------------------------------------------------------------------------------------------------------------
 
 
 hexchat.hook_print("Channel Message", function(word, _)
 
-    local message_org = word[2]
-    local message_auth, message_cont = message_org:match("([^%s]+)%s*(.*)")
+    if is_in(hexchat.get_info("channel"), mod_channel) then
 
-    if smartguard.moderate(message_cont, message_auth,
-            blacklist.blacklist1,
-            blacklist.blacklist2,
-            whitelist.whitelist1)
-    then
-        log_message(message_auth, message_cont)
+        local message_org = word[2]
+        local message_auth, message_cont = message_org:match("([^%s]+)%s*(.*)")
+
+        if smartguard.moderate(message_cont, message_auth,
+                blacklist.blacklist1,
+                blacklist.blacklist2,
+                whitelist.whitelist1)
+        then
+            log_message(message_auth, message_cont)
+        end
+
     end
 
     return hexchat.EAT_NONE
+
 end)
 
 
