@@ -2,11 +2,8 @@
 
 -- PLEASE SET THE DIRECTORY OF THIS SCRIPT
 local script_dir = ""
-local mod_channel = {
-    "##minetest-ctf",
-    "##smartguard",
-}
-local log_channel = "##smartguard"
+local mod_channel = {}
+local log_channel = ""
 
 ------------------------------------------------------------------------------------------------------------------------
 
