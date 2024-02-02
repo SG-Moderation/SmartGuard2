@@ -33,6 +33,7 @@ blacklist.blacklist1 = {
     'saale',
     'sale', -- Will trigger the English "sale" as well.
     'saala',
+    'sala',
     'behanchod',
     'harami',
     'haramkhor',
