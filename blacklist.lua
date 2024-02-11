@@ -146,6 +146,8 @@ blacklist.blacklist1 = {
     'f4ny',
     'fany',
     'fook',
+    'fkin',
+    'fckin',
     'shit',
     'shi%+',
     '%$hit',
