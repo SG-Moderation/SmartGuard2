@@ -4,7 +4,6 @@
 local script_dir = ""
 local mod_channel = {
     "##minetest-ctf",
-    "##smartguard",
 }
 local log_channel = "##smartguard"
 
