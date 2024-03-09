@@ -39,6 +39,8 @@ blacklist.blacklist1 = {
     'haramkhor',
     'haramchor',
     'gaandu',
+    'gand',
+    'gaand',
     'gandu',
     'gaandwa',
     'gandwa',
