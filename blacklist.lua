@@ -57,6 +57,7 @@ blacklist.blacklist1 = {
     ----------------
     'fuck',
     'fick', -- German
+    'mierda', -- Spanish
     'fag',
     'fuc',
     'fuk',
