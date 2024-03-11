@@ -56,7 +56,7 @@ blacklist.blacklist1 = {
     'maakichut',
     ----------------
     'fuck',
-    'fick', # German
+    'fick', -- German
     'fag',
     'fuc',
     'fuk',
