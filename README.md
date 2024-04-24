@@ -91,3 +91,6 @@ whitelist1 = {
     load SmartGuard/main.lua
     ```
 - Click `Close` and you're good to go.
+
+## Licenses
+This project is licensed under the [GNU General Public License v3.0](LICENSE). The logo of this project - [`SmartGuard.png`](./assets/SmartGuard.png) -  is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
