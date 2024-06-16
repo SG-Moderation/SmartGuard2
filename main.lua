@@ -2,7 +2,7 @@
 
 -- PLEASE SET THE DIRECTORY OF THIS SCRIPT
 local script_dir = ""
-local mod_channel = {
+local mod_channels = {
     "##minetest-ctf",
 }
 local log_channel = "##smartguard"
@@ -51,7 +51,7 @@ end
 
 hexchat.hook_print("Channel Message", function(word, _)
 
-    if is_in(hexchat.get_info("channel"), mod_channel) then
+    if is_in(hexchat.get_info("channel"), mod_channels) then
 
         local message_org = word[2]
         local message_auth, message_cont = message_org:match("([^%s]+)%s*(.*)")
